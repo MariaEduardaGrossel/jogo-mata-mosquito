@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="jogo.js"></script>
+    <title>Mata Mosquito</title>
+  </head>
+  <body onresize="gameScreenSize() ">
+    <div class="panel">
+      <div class="scores">
+        Score:
+        <input
+          class="score-number"
+          type="text"
+          disabled
+          value="0"
+          name="count_click"
+          id="count_clicks"
+        />
+      </div>
+      <div class="lifes">
+        <img class="hearts" id="l1" src="imagens/coracao_cheio.png" alt="" />
+        <img class="hearts" id="l2" src="imagens/coracao_cheio.png" alt="" />
+        <img class="hearts" id="l3" src="imagens/coracao_cheio.png" alt="" />
+      </div>
+      <div class="timer">Tempo restante: <span id="timer"></span></div>
+    </div>
+    <script>
+      document.getElementById("timer").innerHTML = time;
+
+      var createFly = setInterval(function () {
+        randomPosition();
+      }, createFlyTime);
+    </script>
+  </body>
+</html>
